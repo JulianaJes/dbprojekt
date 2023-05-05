@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package urlaubsplanung;
+package controls;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -17,7 +17,7 @@ import javafx.stage.Stage;
  *
  * @author Juliana
  */
-public class Urlaubsplanung extends Application {
+public class controlsMain extends Application {
     
     @Override
     public void start(Stage primaryStage) {
