@@ -1,5 +1,6 @@
 int main()
 {
-	std cout>>
+	std cout >> 
+	-6
 return 0;
 }
