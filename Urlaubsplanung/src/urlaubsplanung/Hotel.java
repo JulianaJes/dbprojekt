@@ -12,14 +12,14 @@ package urlaubsplanung;
 public class Hotel {
     private int HotelID;
     private String Name;
-    private String Postleitzahl;
+    private int Postleitzahl;
     private String Adresse;
     private String TelNr;
     private String E_Mail;
     private int Sterneanzahl;
     private int ZielID;
 
-    public Hotel(int HotelID, String Name, String Postleitzahl, String Adresse, String TelNr, String E_Mail, int Sterneanzahl, int ZielID) {
+    public Hotel(int HotelID, String Name, int Postleitzahl, String Adresse, String TelNr, String E_Mail, int Sterneanzahl, int ZielID) {
         this.HotelID = HotelID;
         this.Name = Name;
         this.Postleitzahl = Postleitzahl;
@@ -49,11 +49,11 @@ public class Hotel {
         this.Name = Name;
     }
 
-    public String getPostleitzahl() {
+    public int getPostleitzahl() {
         return Postleitzahl;
     }
 
-    public void setPostleitzahl(String Postleitzahl) {
+    public void setPostleitzahl(int Postleitzahl) {
         this.Postleitzahl = Postleitzahl;
     }
 
@@ -100,7 +100,7 @@ public class Hotel {
     @Override
     public String toString() {
         
-        return name;
+        return Name;
     }
     
     
