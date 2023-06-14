@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
@@ -19,22 +20,23 @@
             <Font size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="tf_vorname" layoutX="83.0" layoutY="90.0" />
+      <TextField fx:id="tfVorname" layoutX="83.0" layoutY="90.0" />
       <Text layoutX="14.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vorname" />
       <Text layoutX="14.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nachname" />
-      <TextField fx:id="tf_nachname" layoutX="83.0" layoutY="122.0" />
+      <TextField fx:id="tfNachname" layoutX="83.0" layoutY="122.0" />
       <Text layoutX="20.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-      <TextField fx:id="tf_email" layoutX="83.0" layoutY="157.0" />
+      <TextField fx:id="tfEmail" layoutX="83.0" layoutY="157.0" />
       <Text layoutX="24.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tel.:" />
-      <TextField fx:id="tf_tel" layoutX="83.0" layoutY="188.0" />
-      <Text layoutX="303.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bitte legen Sie einen Benutzer an" />
-      <ComboBox fx:id="cb_land" layoutX="83.0" layoutY="222.0" prefWidth="150.0" />
+      <TextField fx:id="tfTel" layoutX="83.0" layoutY="188.0" />
+      <Text layoutX="310.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bitte legen Sie einen Benutzer an" />
+      <ComboBox fx:id="cbLand" layoutX="83.0" layoutY="222.0" prefWidth="150.0" />
       <Text layoutX="21.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land" />
-      <ComboBox fx:id="cb_hotel" layoutX="83.0" layoutY="260.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbHotel" layoutX="83.0" layoutY="260.0" prefWidth="150.0" />
       <Text layoutX="21.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel" />
       <DatePicker fx:id="dp_anreise" layoutX="83.0" layoutY="308.0" />
       <DatePicker fx:id="dp_abreise" layoutX="353.0" layoutY="308.0" />
       <Text layoutX="18.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anreise" />
       <Text layoutX="299.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Abreise" />
+      <Button fx:id="btSave" layoutX="365.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleBtSaveAction" text="Kundendaten speichern" />
    </children>
 </AnchorPane>

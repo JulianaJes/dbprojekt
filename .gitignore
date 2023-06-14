@@ -23,3 +23,5 @@
 hs_err_pid*
 replay_pid*
 /Urlaubsplanung/nbproject/private/
+/Urlaubsplanung/dist/
+/Urlaubsplanung/build/

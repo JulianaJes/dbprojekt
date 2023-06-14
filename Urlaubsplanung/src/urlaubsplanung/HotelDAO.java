@@ -10,19 +10,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import util.DBConnector;
-import util.DML_DAO;
 
 /**
  *
  * @author kaise
  */
-public class HotelDao {
+public class HotelDAO {
     
     public static ObservableList<Hotel> getHotels () {
         ObservableList<Hotel> hotelsList = 

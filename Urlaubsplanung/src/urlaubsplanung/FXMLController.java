@@ -7,8 +7,13 @@ package urlaubsplanung;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.property.ListProperty;
+import javafx.beans.property.SimpleListProperty;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -16,26 +21,30 @@ import javafx.scene.control.TextField;
 /**
  * FXML Controller class
  *
- * @author kaise
+ * @author Juliana
  */
 public class FXMLController implements Initializable {
+    private ListProperty<Hotel> listProperty = new SimpleListProperty();
+    private ObservableList<Hotel> hotels;
 
     @FXML
-    private TextField tf_vorname;
+    private TextField tfVorname;
     @FXML
-    private TextField tf_nachname;
+    private TextField tfNachname;
     @FXML
-    private TextField tf_email;
+    private TextField tfEmail;
     @FXML
-    private TextField tf_tel;
+    private TextField tfTel;
     @FXML
-    private ComboBox<?> cb_land;
-    @FXML
-    private ComboBox<?> cb_hotel;
+    private ComboBox<Hotel> cbHotel;
     @FXML
     private DatePicker dp_anreise;
     @FXML
     private DatePicker dp_abreise;
+    @FXML
+    private Button btSave;
+    @FXML
+    private ComboBox<?> cbLand;
 
     /**
      * Initializes the controller class.
@@ -43,6 +52,21 @@ public class FXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        hotels = HotelDAO.getHotels();
+        cbHotel.itemsProperty().bind(listProperty);
+        listProperty.setValue(hotels);
     }    
+
+    @FXML
+    private void handleBtSaveAction(ActionEvent event) {
+        Kunde k = new Kunde();
+        
+        k.setVorname(tfVorname.getText());
+        k.setNachname(tfNachname.getText());
+        k.setEmail(tfEmail.getText());
+        k.setTelefonnummer(tfTel.getText());
+        
+        KundeDAO.saveKunde(k);
+    }
     
 }
