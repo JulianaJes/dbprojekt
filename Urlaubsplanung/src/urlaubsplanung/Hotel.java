@@ -10,35 +10,38 @@ package urlaubsplanung;
  * @author kaise
  */
 public class Hotel {
-    private int HotelID;
+    private int id;
     private String Name;
-    private int Postleitzahl;
-    private String Adresse;
+    private String Strasse;
+    private int PLZ;
+    private String Ort;
     private String TelNr;
-    private String E_Mail;
+    private String Email;
     private int Sterneanzahl;
-    private int ZielID;
+    private int DestId;
 
-    public Hotel(int HotelID, String Name, int Postleitzahl, String Adresse, String TelNr, String E_Mail, int Sterneanzahl, int ZielID) {
-        this.HotelID = HotelID;
-        this.Name = Name;
-        this.Postleitzahl = Postleitzahl;
-        this.Adresse = Adresse;
-        this.TelNr = TelNr;
-        this.E_Mail = E_Mail;
-        this.Sterneanzahl = Sterneanzahl;
-        this.ZielID = ZielID;
+    public Hotel(int id, String Name, String Strasse, int PLZ, String Ort, String TelNr, String Email, int Sterneanzahl,int DestId) {
+       this.id=id;
+       this.Name=Name;
+       this.Strasse=Strasse;
+       this.PLZ=PLZ;
+       this.Ort=Ort;
+       this.TelNr=TelNr;
+       this.Email=Email;
+       this.Sterneanzahl=Sterneanzahl;
+       this.DestId=DestId;
+       
     }
 
     public Hotel() {
     }
 
-    public int getHotelID() {
-        return HotelID;
+    public int getHotelId() {
+        return id;
     }
 
-    public void setHotelID(int HotelID) {
-        this.HotelID = HotelID;
+    public void setHotelId(int id) {
+        this.id=id;
     }
 
     public String getName() {
@@ -48,21 +51,27 @@ public class Hotel {
     public void setName(String Name) {
         this.Name = Name;
     }
-
-    public int getPostleitzahl() {
-        return Postleitzahl;
+    public String getStrasse(){
+        return Strasse;
+    }
+    public void setStrasse(String Strasse){
+        this.Strasse=Strasse;
     }
 
-    public void setPostleitzahl(int Postleitzahl) {
-        this.Postleitzahl = Postleitzahl;
+    public int getPLZ() {
+        return PLZ;
     }
 
-    public String getAdresse() {
-        return Adresse;
+    public void setPLZ(int PLZ) {
+        this.PLZ = PLZ;
     }
 
-    public void setAdresse(String Adresse) {
-        this.Adresse = Adresse;
+    public String getOrt() {
+        return Ort;
+    }
+
+    public void setOrt (String Ort) {
+        this.Ort = Ort;
     }
 
     public String getTelNr() {
@@ -73,12 +82,12 @@ public class Hotel {
         this.TelNr = TelNr;
     }
 
-    public String getE_Mail() {
-        return E_Mail;
+    public String getEmail() {
+        return Email;
     }
 
-    public void setE_Mail(String E_Mail) {
-        this.E_Mail = E_Mail;
+    public void setE_Mail(String Email) {
+        this.Email = Email;
     }
 
     public int getSterneanzahl() {
@@ -89,18 +98,18 @@ public class Hotel {
         this.Sterneanzahl = Sterneanzahl;
     }
 
-    public int getZielID() {
-        return ZielID;
+    public int getDestId() {
+        return DestId;
     }
 
-    public void setZielID(int ZielID) {
-        this.ZielID = ZielID;
+    public void setZielID(int DestId) {
+        this.DestId = DestId;
     }
 
     @Override
     public String toString() {
         
-        return Name;
+        return "Hotel "+Name+" in "+Ort+"("+Sterneanzahl+" Sterne)";
     }
     
     

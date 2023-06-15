@@ -29,12 +29,12 @@
       <Text layoutX="24.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tel.:" />
       <TextField fx:id="tfTel" layoutX="83.0" layoutY="188.0" />
       <Text layoutX="310.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bitte legen Sie einen Benutzer an" />
-      <ComboBox fx:id="cbLand" layoutX="83.0" layoutY="222.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbLand" layoutX="83.0" layoutY="222.0" onAction="#cbDestinationAction" prefWidth="150.0" />
       <Text layoutX="21.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Land" />
-      <ComboBox fx:id="cbHotel" layoutX="83.0" layoutY="260.0" prefWidth="150.0" />
+      <ComboBox fx:id="cbHotel" layoutX="83.0" layoutY="260.0" onAction="#cbHotelAction" prefWidth="150.0" />
       <Text layoutX="21.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel" />
-      <DatePicker fx:id="dp_anreise" layoutX="83.0" layoutY="308.0" />
-      <DatePicker fx:id="dp_abreise" layoutX="353.0" layoutY="308.0" />
+      <DatePicker fx:id="dpAnreise" layoutX="83.0" layoutY="308.0" onAction="#dpAnreiseAction" />
+      <DatePicker fx:id="dpAbreise" layoutX="353.0" layoutY="308.0" onAction="#dpAbreiseAction" />
       <Text layoutX="18.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anreise" />
       <Text layoutX="299.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Abreise" />
       <Button fx:id="btSave" layoutX="365.0" layoutY="188.0" mnemonicParsing="false" onAction="#handleBtSaveAction" text="Kundendaten speichern" />

@@ -17,37 +17,67 @@ import util.DBConnector;
  * @author kaise
  */
 public class HotelDAO {
-    
-    public static ObservableList<Hotel> getHotels () {
-        ObservableList<Hotel> hotelsList = 
-                FXCollections.observableArrayList();
+
+    public static ObservableList<Hotel> getHotels() {
+        ObservableList<Hotel> hotelsList
+                = FXCollections.observableArrayList();
         Connection con;
-        
+
         try {
             con = DBConnector.connect();
-            String sql = "SELECT * FROM hotels";
+            String sql = "SELECT * FROM hotel";
             ResultSet rs = con.createStatement().executeQuery(sql);
-            
+
             while (rs.next()) {
                 hotelsList.add(new Hotel(
-                     rs.getInt("HotelID"),
-                     rs.getString("Name"),
-                     rs.getInt("Postleitzahl"),
-                     rs.getString("Adresse"),
-                     rs.getString("TelNr"),
-                     rs.getString("E_Mail"),
-                     rs.getInt("Sterneanzahl"),  
-                     rs.getInt("Sterneanzahl")
-                        
-               ));
+                        rs.getInt("id"),
+                        rs.getString("Name"),
+                        rs.getString("Strasse"),
+                        rs.getInt("PLZ"),
+                        rs.getString("Ort"),
+                        rs.getString("Telefonnummer"),
+                        rs.getString("Email"),
+                        rs.getInt("Sterneanzahl"),
+                        rs.getInt("DestId")
+                ));
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
-        
+
         return hotelsList;
     }
-  
 
-    
+    public static ObservableList<Hotel> getHotels(int ZielId) {
+        ObservableList<Hotel> hotelsList
+                = FXCollections.observableArrayList();
+        Connection con;
+
+        try {
+            con = DBConnector.connect();
+            String sql = "SELECT * FROM hotel";
+            ResultSet rs = con.createStatement().executeQuery(sql);
+
+            while (rs.next()) {
+                if (rs.getInt("DestId") == ZielId) {
+                    hotelsList.add(new Hotel(
+                            rs.getInt("id"),
+                            rs.getString("Name"),
+                            rs.getString("Strasse"),
+                            rs.getInt("PLZ"),
+                            rs.getString("Ort"),
+                            rs.getString("Telefonnummer"),
+                            rs.getString("Email"),
+                            rs.getInt("Sterneanzahl"),
+                            rs.getInt("DestId")
+                    ));
+                }
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return hotelsList;
+    }
+
 }
