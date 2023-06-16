@@ -5,7 +5,7 @@
  */
 package urlaubsplanung;
 
-
+import java.sql.Date;
 
 
 /**
@@ -17,17 +17,20 @@ public class Buchung {
     public int KundenID;
     public int MitarbeiterID;
     public int HotelID;
-    public String Zeitraum;
+    public Date Anfangsdatum;
+    public Date Enddatum;
 
     public Buchung() {
     }
 
-    public Buchung(int BuchungsID, int KundenID, int MitarbeiterID, int HotelID, String Zeitraum) {
+    public Buchung(int BuchungsID, int KundenID, int MitarbeiterID, int HotelID, Date Anfangsdatum, Date Enddatum ) {
         this.BuchungsID = BuchungsID;
         this.KundenID = KundenID;
         this.MitarbeiterID = MitarbeiterID;
         this.HotelID = HotelID;
-        this.Zeitraum = Zeitraum;
+        this.Anfangsdatum=Anfangsdatum;
+        this.Enddatum=Enddatum;
+       
     }
 
     public int getBuchungsID() {
@@ -62,17 +65,27 @@ public class Buchung {
         this.HotelID = HotelID;
     }
 
-    public String getZeitraum() {
-        return Zeitraum;
+    public Date getAnfangsdatum() {
+        return Anfangsdatum;
     }
 
-    public void setZeitraum(String Zeitraum) {
-        this.Zeitraum = Zeitraum;
+    public void setAnfangsdatum(Date Anfangsdatum) {
+        this.Anfangsdatum=Anfangsdatum;
     }
+    
+      public Date getEnddatum() {
+        return Enddatum;
+    }
+
+    public void setEnddatum(Date Enddatum) {
+        this.Enddatum=Enddatum;
+    }
+
 
     @Override
     public String toString() {
-        return "Buchung{" + "BuchungsID=" + BuchungsID + ", KundenID=" + KundenID + ", MitarbeiterID=" + MitarbeiterID + ", HotelID=" + HotelID + ", Zeitraum=" + Zeitraum + '}';
+        return "Buchung{" + "BuchungsID=" + BuchungsID + ", KundenID=" + KundenID + ", MitarbeiterID=" + MitarbeiterID + ", HotelID=" + HotelID 
+                + ", Zeitraum=" + Anfangsdatum + " bis "+Enddatum;
     }
     
     

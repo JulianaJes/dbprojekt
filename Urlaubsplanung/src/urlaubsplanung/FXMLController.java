@@ -63,6 +63,8 @@ public class FXMLController implements Initializable {
         destinations = DestinationDAO.getDestination();
         cbLand.itemsProperty().bind(listDestination);
         listDestination.setValue(destinations);
+        
+  
     }
 
     @FXML
